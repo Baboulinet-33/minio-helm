@@ -1,18 +1,18 @@
-environment: ovh
+environment: scw
 phase: dev
 
 minio:
   fullnameOverride: "minio"
   enabled: true
-  defaultBuckets: "app,logs,database"
+  defaultBuckets: "app"
   auth:
     existingSecret: minio-root
   ingress:
     enabled: true
-    hostname: minio-mock-data-tooling.apps.app1.numerique-interieur.com
+    hostname: minio.external-app.cpin.numerique-interieur.com
   apiIngress:
     enabled: true
-    hostname: api-minio-mock-data-tooling.apps.app1.numerique-interieur.com
+    hostname: api-minio.external-app.cpin.numerique-interieur.com
   provisioning:
     podSecurityContext:
       enabled: false
