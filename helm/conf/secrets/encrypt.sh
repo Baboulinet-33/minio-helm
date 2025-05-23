@@ -19,6 +19,7 @@
 #
 
 export AGE_KEY=age1jmt0q9ruj8unlhdnqe2nqvtwfyjdynmlxjpjhmr9gl2hdwx7qusqreeurh
+export AGE_KEY_PPROD=age1lxduvqtglrdj38m27gsa4akdu82keqwgh7r57ep3dcwf7uaref4qtafwy5
 
 encrypt_path="."
 
@@ -41,6 +42,6 @@ do
   if [ $extension == "dec" ]; then
     encrypted_file_path="${filename}.enc"
     echo "Encrypt file ${current_file} to ${encrypted_file_path}"
-    sops -e --age $AGE_KEY --input-type yaml --output-type yaml --encrypted-suffix Templates "${current_file}" > "${encrypted_file_path}"
+    sops -e --age $AGE_KEY,$AGE_KEY_PPROD --input-type yaml --output-type yaml --encrypted-suffix Templates "${current_file}" > "${encrypted_file_path}"
   fi
 done

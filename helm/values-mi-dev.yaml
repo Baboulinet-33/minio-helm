@@ -1,0 +1,37 @@
+environment: mi
+phase: dev
+
+minio:
+  fullnameOverride: "minio"
+  enabled: true
+  defaultBuckets: "app"
+  auth:
+    existingSecret: minio-root
+  ingress:
+    enabled: true
+    hostname: minio-gpu.app1.d436.dev.forge.minint.fr
+  apiIngress:
+    enabled: true
+    hostname: api-minio-gpu.app1.d436.dev.forge.minint.fr
+  provisioning:
+    podSecurityContext:
+      enabled: false
+    containerSecurityContext:
+      enabled: false
+  volumePermissions:
+    containerSecurityContext:
+      runAsUser: "auto"
+  containerSecurityContext:
+    enabled: false
+  podSecurityContext:
+    enabled: false
+  persistence:
+    enabled: true
+    size: 30Gi
+  resources:
+    requests:
+      cpu: 512m
+      memory: 512Mi
+    limits:
+      cpu: 1
+      memory: 1024Mi
