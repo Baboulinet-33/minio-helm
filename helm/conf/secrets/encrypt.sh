@@ -18,7 +18,7 @@
 # bash encrypt.sh ovh/dev/secrets.yml.dec => ovh/dev/secrets.yml.dec
 #
 
-export AGE_KEY=age1g867s7tcftkgkdraz3ezs8xk5c39x6l4thhekhp9s63qxz0m7cgs5kan9a
+export AGE_KEY=age1jmt0q9ruj8unlhdnqe2nqvtwfyjdynmlxjpjhmr9gl2hdwx7qusqreeurh
 
 encrypt_path="."
 
